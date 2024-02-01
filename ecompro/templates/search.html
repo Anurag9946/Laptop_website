@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search results</title>
+</head>
+<body>
+{% block content %}
+    <div class="header_section_top">
+        <div class="row">
+           <div class="col-sm-12">
+              <div class="custom_menu">
+                 <ul>
+                    <li><a href="{% url 'start:start' %}">home</a></li>
+                    <li><a href="#">support</a></li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <p class="text-center my_search_text"> You have searched for :<b>"{{query}}"</b></p>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row mx-auto">
+            {% for product in products %}
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <table class="table my_custom_table">
+                    <thead class="my_custom_thead">
+                        <tr>
+                            <th>                                
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+                                        <div style="min-width: 18rem;">
+                                            <img src="{{ product.image.url }}" style="width: 300px;" alt="{{ product.name }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                                        <div>
+                                            <h1 class="my_prod_title">{{ product.name }}</h1>
+                                            {% if product.stock >= 1 %}
+                                            <p class="text-justify my_prod_text"><h3>In stock</h3></p>
+                                            {% elif product.stock <= 0 %}
+                                            <p class="text-justify my_prod_text"><h3>Out of stock</h3></p>
+                                            {% else %}
+                                            {% endif %}
+                                            <p><h3>₹ {{ product.price }}</h3></p>
+                                            <p class="text-justify my_prod_text"><h4>{{ product.description }}</h4></p>
+                                            <br>
+                                            <a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">Add to cart</a>
+                                            &nbsp;
+                                            <a class="btn btn-warning" href="{% url 'start:payment' %}">Buy now</a>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            {% empty %}
+                <div class="row mx-auto">
+                    <p class="text-center my_search_text"> <h3>There is no product that matches the search criteria.</h3></p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="footer_section layout_padding">
+        <div class="container">
+           <div class="footer_logo"><a href="index.html"><h1 style="color:#ffffff;">Fixtes Electronics</h1></a></div>
+           <div class="input_bt">
+              <input type="text" class="mail_bt" placeholder="Your Email" name="Your Email">
+              <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span>
+           </div>
+           <div class="footer_menu">
+              <ul>
+                 <li><a href="#">Laptops & Ultrabooks</a></li>
+                 <li><a href="#">Tablets</a></li>
+                 <li><a href="#">Accessories&softwares</a></li>
+                 <li><a href="#">Services & warranty</a></li>
+                 <li><a href="#">Replacements Parts</a></li>
+                 <li><a href="#">Data Center Solutions</a></li>
+              </ul>
+           </div>
+           <div class="location_main">Help Line  Number : <a href="#">+1 1800 1200 1200</a></div>
+        </div>
+     </div>
+     <!-- footer section end -->
+     <!-- copyright section start -->
+     <div class="copyright_section">
+        <div class="container">
+           <p class="copyright_text">© 2024 All Rights Reserved.<a href="https://html.design"></a></p>
+        </div>
+     </div>
+{% endblock %}
+</body>
+</html>
+
+
+
+
+

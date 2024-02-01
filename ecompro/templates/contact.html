@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+</head>
+<body>
+    {% block content %}
+    <header>
+        <div  class="head_top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">             
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <ul class="navbar-nav mr-auto">
+                   <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'start:start' %}">Home <span class="sr-only"></span></a>
+                   </li>
+                   <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Who We Are
+
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Leadership Principles</a>
+                        <a class="dropdown-item" href="#">Awards and Recognition</a>
+                        <a class="dropdown-item" href="#">Facts About Fixtes</a>
+                      </div>
+                   </li>
+                   <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        What We Do
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                         <a class="dropdown-item" href="#">Delivery and Logistics</a>
+                         <a class="dropdown-item" href="#">Amazon India</a>
+                         <a class="dropdown-item" href="#">Devices and Services</a>
+                         <a class="dropdown-item" href="#">Amazon Web Services</a>
+                         <a class="dropdown-item" href="#">Entertainment</a>
+                      </div>
+                   </li>
+                   <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Our Workplace
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                         <a class="dropdown-item" href="#">Our Employees</a>
+                         <a class="dropdown-item" href="#">Employee Benefits</a>
+                         <a class="dropdown-item" href="#">Diversity, Equity, and Inclusion</a>
+                         <a class="dropdown-item" href="#">Corporate Offices</a>
+                      </div>
+                   </li>
+                   <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Our Impact
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       <a class="dropdown-item" href="#">The Climate Pledge</a>
+                       <a class="dropdown-item" href="#">Sustainable Operations</a>
+                       <a class="dropdown-item" href="#">Sustainability Website</a>
+                    </div>
+                    </li>
+                    </ul>
+                   <form class="form-inline my-2 my-lg-0" action="{% url 'searchapp:SearchResult' %}" method="get">
+                      {% csrf_token %}
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                   </form>
+                </div>
+            </nav>    
+        </div>
+    </header>    
+    <div id="contact" class="request">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-12">
+                 <div class="titlepage">
+                    <h2>Request a Call back</h2>
+                 </div>
+              </div>
+
+              </div>
+              <div class="row">
+                 <div class="col-sm-12">
+                    <div class="black_bg">
+                       <div class="row">
+                          <div class="col-md-7 ">
+                             <form class="main_form">
+                                <div class="row">
+                                   <div class="col-md-12 ">
+                                      <input class="contactus" placeholder="Name" type="text" name="Name">
+                                   </div>
+                                   <div class="col-md-12">
+                                      <input class="contactus" placeholder="Phone number" type="text" name=" Phone number">
+                                   </div>
+                                   <div class="col-md-12">
+                                      <input class="contactus" placeholder="Email" type="text" name="Email">
+                                   </div>
+                                   <div class="col-md-12">
+                                      <textarea class="textarea" placeholder="Message" type="text" name="Message "> Message </textarea>
+                                   </div>
+                                   <div class="col-sm-12">
+                                      <button class="send_btn" onclick="alert('Thank you, our team will call you soon!')">Send</button>
+                                   </div>
+                                </div>
+                             </form>
+                          </div>
+                          <div class="col-md-5">
+                             <div class="mane_img">
+                                <figure><img src="{% static 'images/mane_img.jpg' %}" alt="#"/></figure>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'js/plugin.js' %}"></script>
+    <!-- sidebar -->
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> 
+    {% endblock %}
+</body>
+</html>

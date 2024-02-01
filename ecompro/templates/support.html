@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>about page</title>
+</head>
+<body>
+{% block content %}
+   <div class="header_section_top">
+      <div class="row">
+         <div class="col-sm-12">
+            <div class="custom_menu">
+               <ul>
+                  <li><a href="{% url 'start:start' %}">home</a></li>
+                  <li><a href="{% url 'home:all_prod_cat' %}">Fixtes</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div>
+      <img src="{% static 'images/support.png' %}" alt="">
+   </div>
+   <div class="footer_section layout_padding">
+      <div class="container">
+         <div class="footer_logo"><a href="index.html"><h1 style="color:#ffffff;">Fixtes Support</h1></a></div>
+         <br>
+         <div class="footer_menu">
+            <ul>
+               <h1>Product Support</h1>
+               <li><a href="#">Apple Repair Options</a></li><br>
+               <li><a href="#">Service and Repair Information</a></li><br>
+               <li><a href="#">AppleCare Products</a></li><br>
+               <li><a href="#">Hardware Warranties</a></li><br>
+               <li><a href="#">Software License Agreements</a></li><br>
+               <li><a href="#">Complimentary Support</a></li><br>
+            </ul>
+            <ul>
+               <h1>Resources</h1>
+               <li><a href="#">My Support</a></li><br>
+               <li><a href="#">Downloads</a></li><br>
+               <li><a href="#">Manuals</a></li><br>
+               <li><a href="#">Tech Specs</a></li><br>
+               <li><a href="#">Support Site Map</a></li><br>
+               <li><a href="#">Apple Support Videos</a></li><br>
+
+            </ul>
+            <ul>
+               <h1>Connect</h1>
+               <li><a href="#">Contact Us</a></li><br>
+               <li><a href="#">Contact UsMy Support</a></li><br>
+               <li><a href="#">Phone Numbers</a></li><br>
+               <li><a href="#">Support app</a></li><br>
+               <li><a href="#">Apple Communities</a></li><br>
+               <li><a href="#">@AppleSupport</a></li><br>
+            </ul>
+            <ul>
+               <h1>Service & repair</h1>
+               <li><a href="#">Apple Repair Options</a></li><br>
+               <li><a href="#">Service and Repair Information</a></li><br>
+               <li><a href="#">AppleCare Products</a></li><br>
+               <li><a href="#">Hardware Warranties</a></li><br>
+               <li><a href="#">Software License Agreements</a></li><br>
+               <li><a href="#">Complimentary Support/a></li><br>
+            </ul>
+         </div>
+      </div>
+   </div>
+   
+   
+{% endblock %}
+</body>
+</html>
+
+
+
+
+
+
+

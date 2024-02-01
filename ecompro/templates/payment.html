@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+</head>
+<body>
+{% block content %}
+    <div class="header_section_top">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="custom_menu">
+                    <ul>
+                        <li><a href="{% url 'home:all_prod_cat' %}">home</a></li>
+                        <li>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <table class="table my_custom_table">
+            <thead class="my_custom_thead">
+                <tr>
+                    <th>
+                        <h1>Delivery address</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <form>
+                                <div class="form-row">
+                                  <div class="col-md-4 mb-3">
+                                    <label for="validationServer01">First name</label>
+                                    <input type="text" class="form-control is-valid" placeholder="First name">
+                                    <div class="valid-feedback">
+                                      Looks good!
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <label for="validationServer02">Last name</label>
+                                    <input type="text" class="form-control is-valid"  placeholder="Last name">
+                                    <div class="valid-feedback">
+                                      Looks good!
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <label for="validationServerUsername">Username</label>
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                                      </div>
+                                      <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                                      <div class="invalid-feedback">
+                                        Please choose a username.
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="col-md-6 mb-3">
+                                    <label for="validationServer03">City</label>
+                                    <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
+                                    <div class="invalid-feedback">
+                                      Please provide a valid city.
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <label for="validationServer04">State</label>
+                                    <input type="text" class="form-control is-invalid" placeholder="State" required>
+                                    <div class="invalid-feedback">
+                                      Please provide a valid state.
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <label for="validationServer05">Zip</label>
+                                    <input type="text" class="form-control is-invalid" placeholder="Zip" required>
+                                    <div class="invalid-feedback">
+                                      Please provide a valid zip.
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="form-check">
+                                    <input class="form-check-input is-invalid" type="checkbox">
+                                    <label class="form-check-label" for="invalidCheck3">
+                                      Agree to terms and conditions
+                                    </label>
+                                    <div class="invalid-feedback">
+                                      You must agree before submitting.<br>
+                                    </div>
+                                  </div>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                              </form>
+                        </div>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <table class="table my_custom_table">
+            <thead class="my_custom_thead">
+                <tr>
+                    <th>
+                        <h1>Select a payment method</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="container">
+                            <div class="row">
+                                <h3>   Your available balance</h3>&nbsp;&nbsp;&nbsp; <input type="text"  placeholder="Enter code">
+                                <button type="button" class="btn btn-light-dark">apply</button>                         
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>   
+    </div> 
+
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <table class="table my_custom_table">
+            <thead class="my_custom_thead">
+                <tr>
+                    <th>
+                        <h1>Another payment method</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <button>
+                            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    Credit or debit card
+                                    <br>
+                                    <i class="fa fa-cc-visa"></i>
+                                    <i class="fa fa-cc-mastercard"></i>
+                                    <i class="fa fa-cc-paypal"></i>
+                                    <i class="fa fa-google-wallet"></i>
+                                    <i class="fa fa-credit-card"></i>
+                                </div>
+                            </div>
+                        </button>
+                        <br>
+                        <button>
+                            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    <form action="/action_page.php">
+                                        <label for="cars">Net Banking:</label>
+                                        <select name="cars" id="cars">
+                                          <option value="volvo">Select</option>
+                                          <option value="saab">Axis Bank</option>
+                                          <option value="opel">HDFC Bank</option>
+                                          <option value="audi">ICICI Bank</option>
+                                          <option value="audi">Kotak Bank</option>
+                                          <option value="audi">State Bank Of India</option>
+                                          <option value="audi">Canera Bank</option>
+                                          <option value="audi">South Indian Bank</option>
+                                          <option value="audi">Bank Of India</option>
+                                          <option value="audi">Bank Of Maharasthra</option>
+                                        </select>
+                                      </form>
+                                </div>
+                            </div>
+                        </button>
+                        <br>
+                        <button>
+                            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    Other UPI Apps
+                                </div>
+                            </div>
+                        </button>
+                        <button>
+                            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    EMI
+                                </div>
+                            </div>
+                        </button>
+                        <button>
+                            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    Cash on Delivery/Pay on Delivery
+                                </div>
+                            </div>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>   
+    </div> 
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <table class="table my_custom_table">
+            <thead class="my_custom_thead">
+                <tr>
+                    <th>
+                        <button type="button" class="btn btn-link">Offers</button>
+                        <button type="button" class="btn btn-link">Items and delivery</button>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>        
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <table class="table my_custom_table">
+            <thead class="my_custom_thead">
+                <tr>
+                    <th>
+                        <p>
+                            Need help? Check our<a href="" class="btn btn-link">help pages</a>or<a href="" class="btn btn-link">contact us</a>
+                            <br>
+                            When your order is placed, we'll send you an e-mail message acknowledging receipt of your order.
+                            If you choose to pay using an electronic payment method (credit card, debit card or net banking),
+                            you will be directed to your bank's website to complete your payment.
+                            Your contract to purchase an item will not be complete until we receive your electronic payment
+                            and dispatch your item. If you choose to pay using Pay on Delivery (POD), you can pay
+                            using cash/card/net banking when you receive your item.
+                            <br>
+                            See fixtes.in .<a href="" class="btn btn-link">Return Policy.</a>
+                            <br>
+                            Need to add more items to your order? Continue shopping on the <a href="{% url 'home:all_prod_cat' %}" class="btn btn-link">fixtes.in homepage.</a>                                                    
+
+                        </p>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>     
+    <br>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <table class="table my_custom_table">
+            <thead class="my_custom_thead">
+                <tr>
+                    <th>
+                        <h1>Thank you</h1>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+{% endblock %}
+</body>
+</html>
+
+
+
+
+
